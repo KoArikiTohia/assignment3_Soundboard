@@ -130,7 +130,7 @@ export default function App() {
                         <Pressable
                         style={({ pressed }) => [
                             styles.button,
-                            { backgroundColor: pressed ? 'lightblue' : 'skyblue' }
+                            { backgroundColor: pressed ? '#ffaaa5' : '#ff8b94' }
                         ]}
                             onPress={() => playAdditionalSound(item.sound)}>
                             <Text style={styles.buttonText}>{item.label}</Text>
@@ -144,7 +144,7 @@ export default function App() {
                         <Pressable
                             style={({ pressed }) => [
                                 styles.button,
-                                { backgroundColor: pressed ? 'lightblue' : 'skyblue' }
+                                { backgroundColor: pressed ? '#96ceb4' : '#ff8b94' }
                             ]}
                             onPressIn={() => startRecording(buttonNumber)}
                             onPressOut={() => stopRecording(buttonNumber)}>
@@ -153,7 +153,7 @@ export default function App() {
                         <Pressable
                             style={({ pressed }) => [
                                 styles.button,
-                                { backgroundColor: pressed ? 'lightblue' : 'skyblue' }
+                                { backgroundColor: pressed ? '#dcedc1' : '#ff8b94' }
                             ]}
                             onPress={() => playRecordingOnce(buttonNumber)}>
                             <Text style={styles.buttonText}>Play Once</Text>
@@ -161,7 +161,7 @@ export default function App() {
                         <Pressable
                             style={({ pressed }) => [
                                 styles.button,
-                                { backgroundColor: pressed ? 'lightblue' : 'skyblue' }
+                                { backgroundColor: pressed ? '#a8e6cf' : '#ff8b94' }
                             ]}
                             onPress={() => toggleLooping(buttonNumber)}>
                             <Text style={styles.buttonText}>{loopingStates[buttonNumber - 1] ? 'Stop Looping' : 'Start Looping'}</Text>
@@ -178,14 +178,13 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'grey',
+        backgroundColor: '#ffd3b6',
         alignItems: 'center',
         justifyContent: 'center',
     },
     soundBoardGrid: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        //borderWidth: 1,
         padding: 10,
         margin: 10,
         width: 410,
@@ -199,8 +198,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     button: {
-        borderWidth: 1,
-        backgroundColor: 'skyblue',
+        borderWidth: 3,
+        backgroundColor: '#88d8b0',
         padding: 10,
         borderRadius: 5,
         width: 90,
@@ -209,6 +208,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         margin: 2,
+        borderTopRightRadius: 20,
+        fontWeight:'bold',
     },
 
     buttonText: {
@@ -218,8 +219,11 @@ const styles = StyleSheet.create({
     header: {
         flex: 0.5,
         textAlign: 'center',
-        textAlignVertical: 'top',
+        textAlignVertical: 'center',
         fontSize: 60,
-        color: 'orange',
+        color: '#ff8b94',
+        fontWeight: 'bold',
+        textShadowRadius: 10,
+        textShadowColor: 'black',
     }
 });
